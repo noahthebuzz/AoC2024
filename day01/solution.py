@@ -1,50 +1,32 @@
 import sys
 from collections import Counter
 
-def readInput(path):
-        with open(path, "r") as file:
-                data = file.readlines()
-        
-        return data
+# Read input from file
+path = "W:\git\GitHub\Privat\AoC2024\day01\input.txt"
+with open(path, 'r') as file:
+    data = file.readlines()
 
+# Parse the input into two lists
+left_list = []
+right_list = []
+for line in data:
+    left, right = map(int, line.split())
+    left_list.append(left)
+    right_list.append(right)
 
-def parseLists(data):
-        first_list = []
-        second_list = []
+# Part 1: Calculate total distance between the lists
+# Sort both lists
+sorted_left = sorted(left_list)
+sorted_right = sorted(right_list)
 
-        for line in data:
-                (left, right) = map(int, line.split())
-                first_list.append(left)
-                second_list.append(right)
+# Calculate the total distance
+total_distance = sum(abs(a - b) for a, b in zip(sorted_left, sorted_right))
+print("Part 1: Total Distance:", total_distance)
 
-        return (first_list, second_list)
+# Part 2: Calculate similarity score
+# Count occurrences of each number in the right list
+right_counts = Counter(right_list)
 
-
-def calculateDifference(first_list, second_list):
-        result = sum(abs(a-b) for (a,b) in zip(first_list, second_list))
-
-        return result
-
-
-def calculateSimilarityScore(first_list, second_list):
-        second_list_counts = Counter(second_list)
-        result = sum(num * second_list_counts[num] for num in first_list)
-
-        return result
-        
-
-# Run the program
-if __name__ == "__main__":
-        path = "W:\git\GitHub\Privat\AoC2024\day01\input.txt"
-        file = readInput(path)
-        
-        (first, second) = parseLists(file)
-
-        first.sort()
-        second.sort()
-
-        result = calculateDifference(first, second)
-        print("Difference: " + str(result))
-
-        score = calculateSimilarityScore(first, second)
-        print("Similarity Score: " + str(score))
+# Calculate the similarity score
+similarity_score = sum(num * right_counts[num] for num in left_list)
+print("Part 2: Similarity Score:", similarity_score)
