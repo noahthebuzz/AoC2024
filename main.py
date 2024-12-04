@@ -31,9 +31,16 @@ def setup_aoc_structure():
                                         if file_name == "solution.py":
                                                 # Add a comment to the Python solution file as a placeholder
                                                 f.write("# Write your solution here\n")
-                                                # Add a main that prints "Hello, World."
-                                                f.write('if __name__ == "__main__":\n' + 
-                                                        '        print("Hello, World.")\n')
+                                                # Add this:
+                                                ## Read input from file
+                                                #path = "W:\git\GitHub\Privat\AoC2024\day04\input.txt"
+                                                #with open(path, 'r') as file:
+                                                        #data = file.readlines()
+                                                f.write("\n\n# Read input from file\n")
+                                                f.write(f"path = \"{parent_folder}\\{folder_name}\\input.txt\"\n")
+                                                f.write("with open(path, 'r') as file:\n")
+                                                f.write("        data = file.readlines()\n")
+
                                         else:
                                                 # Leave the other files empty
                                                 pass
@@ -56,5 +63,5 @@ def download_input():
 
 # Run the program
 if __name__ == "__main__":
-        #setup_aoc_structure()
-        download_input()
+        setup_aoc_structure()
+        #download_input()
