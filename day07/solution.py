@@ -19,6 +19,17 @@ def is_valid(target, operands):
                 return target == 0
         return is_valid(target-operands[-1], operands[:-1]) or target % operands[-1] == 0 and is_valid(target//operands[-1], operands[:-1])
 
+        ###########################
+        ### ALTERNATIVE SOLUTION
+        ###########################
+        # if len(operands) == 1:
+        #         return target == operands[0]
+        # if is_valid(target, [operands[0] + operands[1]] + operands[2:]):
+        #         return True
+        # if is_valid(target, [operands[0] * operands[1]] + operands[2:]):
+        #         return True
+        # return False
+
 for line in data:
         target, operands = line.strip().split(":")
         operands = operands.strip().split(" ")
