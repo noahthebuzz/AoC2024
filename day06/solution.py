@@ -92,6 +92,7 @@ print("Part 1: " + str(sum([row.count('X') for row in final_map])))
 #############################
 ### Part 2
 #############################
+### NOT WORKING
 
 new_game_map = turn_data_into_map(data) 
 
