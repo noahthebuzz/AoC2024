@@ -2,6 +2,7 @@
 
 
 # Read input from file
-path = "W:\git\GitHub\Privat\AoC2024\day11\input.txt"
+path = "day11\input.txt"
 with open(path, 'r') as file:
         data = file.readlines()
+print(data)
