@@ -33,7 +33,7 @@ for r in range(ROW):
 
 for o_x in range(ROW):
         for o_y in range(COL):
-                print("[DEBUG]: " + str(o_x) + " " + str(o_y))
+                print("[DEBUG]: X: " + str(o_x) + " - Y: " + str(o_y))
 
                 x,y = start_row, start_col
                 d = 0 # DIRECTION 0 = up, 1 = right, 2 = down, 3 = left
