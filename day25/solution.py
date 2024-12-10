@@ -7,4 +7,5 @@ import pyperclip as pc
 
 # Read input from file
 path = "day25\input.txt"
-data = open(path).read().strip()print(data)
+data = open(path).read().strip()
+print(data)

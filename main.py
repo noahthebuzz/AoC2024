@@ -40,7 +40,7 @@ def setup_aoc_structure():
                                                         #data = file.readlines()
                                                 f.write("\n\n# Read input from file\n")
                                                 f.write(f"path = \"{folder_name}\\input.txt\"\n")
-                                                f.write("data = open(path).read().strip()")
+                                                f.write("data = open(path).read().strip()\n")
                                                 f.write("print(data)\n")
 
                                         else:
