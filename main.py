@@ -5,7 +5,7 @@ import requests
 def setup_aoc_structure():
 
         # Define the number of days for Advent of Code
-        num_days = 24
+        num_days = 25
         
         # Create directories and files for each day
         for day in range(1, num_days + 1):
@@ -29,6 +29,10 @@ def setup_aoc_structure():
                                         if file_name == "solution.py":
                                                 # Add a comment to the Python solution file as a placeholder
                                                 f.write("# Write your solution here\n")
+                                                f.write("import sys\n")
+                                                f.write("import re\n")
+                                                f.write("from collections import defaultdict, Counter, deque\n")
+                                                f.write("import pyperclip as pc\n")
                                                 # Add this:
                                                 ## Read input from file
                                                 #path = "W:\git\GitHub\Privat\AoC2024\day04\input.txt"
@@ -36,8 +40,7 @@ def setup_aoc_structure():
                                                         #data = file.readlines()
                                                 f.write("\n\n# Read input from file\n")
                                                 f.write(f"path = \"{folder_name}\\input.txt\"\n")
-                                                f.write("with open(path, 'r') as file:\n")
-                                                f.write("        data = file.readlines()\n")
+                                                f.write("data = open(path).read().strip()")
                                                 f.write("print(data)\n")
 
                                         else:
