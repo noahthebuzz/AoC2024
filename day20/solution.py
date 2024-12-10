@@ -1,8 +1,10 @@
 # Write your solution here
+import sys
+import re
+from collections import defaultdict, Counter, deque
+import pyperclip as pc
 
 
 # Read input from file
 path = "day20\input.txt"
-with open(path, 'r') as file:
-        data = file.readlines()
-print(data)
+data = open(path).read().strip()print(data)
