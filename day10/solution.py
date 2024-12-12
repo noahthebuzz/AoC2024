@@ -69,8 +69,8 @@ def find_9(map, number, x, y):
         if map[x][y] != (number):
                 return 0
         if number == 9:
-                print(f"[DEBUG]: {number=}, {x=}, {y=}")
-                print(f"[DEBUG]: added 1 to score")
+                #print(f"[DEBUG]: {number=}, {x=}, {y=}")
+                #print(f"[DEBUG]: added 1 to score")
                 return 1
         return find_9(map, map[x][y] + 1, x, y - 1) + find_9(map, map[x][y] + 1, x, y + 1) + find_9(map, map[x][y] + 1, x - 1, y) + find_9(map, map[x][y] + 1, x + 1, y)
        
